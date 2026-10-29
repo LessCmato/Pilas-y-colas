@@ -1,23 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        Cola cola = new Cola();
+        Pila pila = new Pila();
 
-        System.out.println("¿Está vacía? " + cola.estaVacia()); // true
+        System.out.println("¿Está vacía? " + pila.estaVacia()); // true
 
-        cola.encolar(10);
-        cola.encolar(20);
-        cola.encolar(30);
-        System.out.print("Cola tras encolar 10, 20, 30: ");
-        cola.imprimir();                                // 10 → 20 → 30
+        pila.push(10);
+        pila.push(20);
+        pila.push(30);
+        System.out.print("Pila tras push 10, 20, 30: ");
+        pila.imprimir();                                 // 30 ↓ 20 ↓ 10
 
-        System.out.println("verFrente():  " + cola.verFrente());  // 10
-        System.out.println("desencolar(): " + cola.desencolar()); // 10
-        System.out.print("Cola tras desencolar: ");
-        cola.imprimir();                                // 20 → 30
+        System.out.println("peek():  " + pila.peek());     // 30
+        System.out.println("pop():   " + pila.pop());      // 30
+        System.out.print("Pila tras pop: ");
+        pila.imprimir();                                 // 20 ↓ 10
 
-        System.out.println("Tamaño: " + cola.tamaño());        // 2
-        System.out.println("desencolar(): " + cola.desencolar()); // 20
-        System.out.println("desencolar(): " + cola.desencolar()); // 30
-        System.out.println("¿Está vacía? " + cola.estaVacia()); // true
+        System.out.println("Tamaño: " + pila.tamaño());    // 2
+        System.out.println("pop():   " + pila.pop());      // 20
+        System.out.println("pop():   " + pila.pop());      // 10
+        System.out.println("¿Está vacía? " + pila.estaVacia()); // true
     }
 }
